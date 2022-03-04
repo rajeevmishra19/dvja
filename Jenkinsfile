@@ -28,7 +28,7 @@ pipeline
 	  {
         withMaven(maven : 'mvn-3.8.4') 
 		{
-          sh 'mvn dependencyCheck:check'
+          sh 'mvn dependencyCheck additionalArguments: '', odcInstallation: 'ODC'
         }
         dependencyCheckPublisher pattern: 'dependency-check-report.xml' 
         sh 'mv dependency-check-report.xml /var/jenkins_home/workspace/ODC_SCA/reports'
