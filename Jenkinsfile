@@ -16,7 +16,7 @@ pipeline
 		{
         withMaven(maven : 'mvn-3.8.4') 
 			{
-          sh "mvn package"
+          sh "mvn clean package"
 			}      
 		}
     }
