@@ -21,15 +21,14 @@ pipeline
 		}
     }
 
-    stage ('OWASP Dependency-Check Vulnerabilities') 
-	{
-
-      steps 
-	  {
-        dependencyCheck additionalArguments: '', odcInstallation: 'ODC'
-        dependencyCheckPublisher pattern: 'dependency-check-report.xml' 
-        sh 'mv dependency-check-report.xml /var/jenkins_home/workspace/ODC_SCA/reports' 
-      }
-    }
+stage ('OWASP Dependency-Check Vulnerabilities') {  
+    steps {  
+     withMaven(maven : 'mvn-3.6.3') {  
+      sh 'mvn dependency-check:check'  
+     }  
+   
+     dependencyCheckPublisher pattern: 'target/dependency-check-report.xml'  
+    }  
+   }  
 		}
 }
