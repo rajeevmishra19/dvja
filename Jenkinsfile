@@ -23,7 +23,7 @@ pipeline
 
 stage ('OWASP Dependency-Check Vulnerabilities') {  
     steps {  
-     withMaven(maven : 'mvn-3.6.3') {  
+     withMaven(maven : 'mvn-3.8.4') {  
       sh 'mvn dependency-check:check'  
      }  
    
