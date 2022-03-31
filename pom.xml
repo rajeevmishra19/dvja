@@ -9,7 +9,7 @@
     <name>dvja</name>
 
     <properties>
-        <struts2.version>2.5.14</struts2.version>
+        <struts2.version>2.5.15</struts2.version>
         <log4j2.version>2.15.0</log4j2.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.version>5.2.19.RELEASE</spring.version>
